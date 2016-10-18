@@ -163,3 +163,7 @@ opacity: 0.3;
 #donate {
 padding:10px 10px 10px 10px;
 }
+
+#dropdown_ext_list {
+    width: 90%;
+}
