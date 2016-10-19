@@ -136,25 +136,27 @@ function makeTable() {
 				extensionName.innerHTML = "<img src='blank.png'; width = 30; height = 30 />  "
 			}
 			//add disable sign
-			extensionName.innerHTML += "<img src= 'nosign1.png'; class = 'nosign'/>"
+			extensionName.innerHTML += '<img src="nosign1.png"; class="nosign" data-id="'+entry.id+'" />';
 			extensionName.innerHTML += ext.name;
 			$td.appendChild(extensionName);
-			$td.setAttribute('class', entry.id);
-			$td.setAttribute('onclick', 'switchMode(this.className)')
+			//$td.setAttribute('class', entry.id);
+			//$td.setAttribute('onclick', 'switchMode(this.className)')
 			$tr.appendChild($td);
 			$td = document.createElement("td");
 
 			for (i in entry.filterWords) {
 				var enable_words = document.createElement('span');
 				enable_words.innerHTML = entry.filterWords[i] + "," + "<br>";
-				enable_words.setAttribute('class', entry.id);
-				enable_words.setAttribute('id', i);
-				enable_words.setAttribute('onclick', 'removeItem(this.className, this.id)');
+				enable_words.setAttribute('class', 'filter');
+				enable_words.setAttribute('data-id', entry.id);
+				enable_words.setAttribute('data-index', i);
+				//enable_words.setAttribute('id', i);
+				//enable_words.setAttribute('onclick', 'removeItem(this.className, this.id)');
 				$td.appendChild(enable_words);
 			}
 			$tr.appendChild($td);
-			$tbody.appendChild($tr)
-			table.appendChild($tbody)
+			$tbody.appendChild($tr);
+			table.appendChild($tbody);
 		});
 	}
 	getStored();

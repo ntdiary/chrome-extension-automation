@@ -1,23 +1,26 @@
 {
-  "name": "Extension Automation",
-  "manifest_version": 2,
-  "version": "1.1.4",
-  "description": "Automatically enables and disables extensions for specified sites. For simpler browsing and better performance.",
-  "background": {
-    "page": "background.html",
-    "persistent": false
-  },
-  "icons": { "16": "icon16.png",
-           "48": "icon48.png",
-          "128": "icon128.png" },
-  "options_page": "options.html",
-  "browser_action": {
-    "default_icon": "icon.png",
-  "default_title": "Extension Automation",
-    "default_popup": "popup.html"
-  },
-  "permissions": [
-    "management",
-    "tabs"
-  ]
+    "name": "Extension Automation",
+    "version": "1.1.4",
+    "description": "Automatically enables and disables extensions for specified sites. For simpler browsing and better performance.",
+    "background": {
+        "page": "background.html",
+        "persistent": false
+    },
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "options_page": "options.html",
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "Extension Automation",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "management",
+        "tabs"
+    ],
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'"
 }

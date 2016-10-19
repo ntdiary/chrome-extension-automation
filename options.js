@@ -1,12 +1,22 @@
+// need jquery
 
-(function () {
-    var po = document.createElement('script');
-    po.type = 'text/javascript';
-    po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var head = document.getElementsByTagName('head')[0];
-    head.appendChild(po);
-})();
+var $table = $('#prefs-table');
+$table.on('click', function(e) {
+    var $target = $(e.target);
+    if ($target.hasClass('nosign')) {
+        switchMode($target.data('id'));
+    } else if ($target.hasClass('filter')) {
+        removeItem($target.data('id'), $target.data('index'))
+    }
+});
+// (function () {
+//     var po = document.createElement('script');
+//     po.type = 'text/javascript';
+//     po.async = true;
+//     po.src = 'https://apis.google.com/js/plusone.js';
+//     var head = document.getElementsByTagName('head')[0];
+//     head.appendChild(po);
+// })();
 
 document.addEventListener('DOMContentLoaded', init);
 
